@@ -1,0 +1,134 @@
+
+package main;
+
+
+public class Main {
+    
+    
+    //class people
+    public static class People{
+        
+        //atributes
+        String cpd;
+        String name;
+        int age;
+
+        public People(String cpd, String name, int age) {
+            this.cpd = cpd;
+            this.name = name;
+            this.age = age;
+        }
+
+        
+        //methods gets and sets
+        public String getCpd() {
+        return cpd;
+        }
+
+        
+        public String getName() {
+        return name;
+        }
+
+        
+        public int getAge() {
+        return age;
+        }
+
+        
+        public void setCpd(String cpd) {
+        this.cpd = cpd;
+        }
+
+        
+        public void setName(String name) {
+        this.name = name;
+        }
+
+        
+        public void setAge(int age) {
+        this.age = age;
+        }
+
+       
+        public String toString() {
+            return "\nCpd = " + cpd + "\nName = " + name + "\nAge = " + age ;
+        }        
+    }
+    
+    
+    public static class Student extends People{
+        
+    //atributes
+    String dicipline;
+    String course;
+    
+    //constructor
+
+    public Student(String dicipline, String course, String cpd, String name, int age) {
+    super(cpd, name, age);
+    this.dicipline = dicipline;
+    this.course = course;
+    }
+    
+    //methods gets and sets
+
+        public String getDicipline() {
+        return dicipline;
+        }
+
+        public String getCourse() {
+        return course;
+        }
+
+        public String getCpd() {
+        return cpd;
+        }
+
+        public String getName() {
+        return name;
+        }
+
+        public int getAge() {
+        return age;
+        }
+
+        public void setDicipline(String dicipline) {
+        this.dicipline = dicipline;
+        }
+
+        public void setCourse(String course) {
+        this.course = course;
+        }
+
+        public void setCpd(String cpd) {
+        this.cpd = cpd;
+        }
+
+        public void setName(String name) {
+        this.name = name;
+        }
+
+        public void setAge(int age) {
+        this.age = age;
+        }
+
+        
+        public String toString() {
+        return "\nDicipline = " + dicipline + "\nCourse = " + course;
+        }
+  
+
+    }
+   
+    
+    public static void main(String[] args) {
+      People p = new People("123123123","Gustavo",19); 
+      Student s = new Student("Matematica","Matematica","123123123","Gustavo",19);
+     
+      System.out.println(p.toString());
+      System.out.println(s.toString());
+     
+    }
+    
+}

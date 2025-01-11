@@ -1,0 +1,101 @@
+
+public class main {
+ public static class Notes {
+    private double homework1;
+    private double homework2;
+    private double homework3;
+    private double homework4;
+    private double test1;
+    private double test2;
+
+    public Notes(double homework1, double homework2, double homework3, double homework4, double test1, double test2) {
+        this.homework1 = homework1;
+        this.homework2 = homework2;
+        this.homework3 = homework3;
+        this.homework4 = homework4;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
+
+    public double gethomework1() {
+        return homework1;
+    }
+
+    public void sethomework1(double homework1) {
+        this.homework1 = homework1;
+    }
+
+    public double gethomework2() {
+        return homework2;
+    }
+
+    public void sethomework2(double homework2) {
+        this.homework2 = homework2;
+    }
+
+    public double gethomework3() {
+        return homework3;
+    }
+
+    public void sethomework3(double homework3) {
+        this.homework3 = homework3;
+    }
+
+    public double gethomework4() {
+        return homework4;
+    }
+
+    public void sethomework4(double homework4) {
+        this.homework4 = homework4;
+    }
+
+    public double gettest1() {
+        return test1;
+    }
+
+    public void settest1(double test1) {
+        this.test1 = test1;
+    }
+
+    public double gettest2() {
+        return test2;
+    }
+
+    public void settest2(double test2) {
+        this.test2 = test2;
+    }
+
+    public double calcularMediaFinal() {
+        double mediahomeworks = (homework1 + homework2 + test1) / 3.0;
+        double mediatests = (homework3 + homework4 + test2) / 3.0;
+        return (mediahomeworks + mediatests) / 2.0;
+    }
+
+    public boolean verificarAtestcao() {
+        double mediaFinal = calcularMediaFinal();
+        return mediaFinal >= 6.0;
+    }
+}
+
+    
+    public static void main(String[] args) {
+        
+        Notes Notes = new Notes(7.5, 8.0, 6.0, 7.0, 8.5, 9.0);
+
+        System.out.println("Notes:");
+        System.out.println("homework 1: " + Notes.gethomework1());
+        System.out.println("homework 2: " + Notes.gethomework2());
+        System.out.println("homework 3: " + Notes.gethomework3());
+        System.out.println("homework 4: " + Notes.gethomework4());
+        System.out.println("test 1: " + Notes.gettest1());
+        System.out.println("test 2: " + Notes.gettest2());
+
+        double mediaFinal = Notes.calcularMediaFinal();
+        System.out.println("\nMédia Final: " + mediaFinal);
+
+        boolean atestdo = Notes.verificarAtestcao();
+        System.out.println("Situação: " + (atestdo ? "Atestdo" : "Retestdo"));
+    }
+    }
+    
+

@@ -1,0 +1,119 @@
+
+public class main {
+    
+    public static class Date {
+    private int year;
+    private int month;
+    private int day;
+
+    public Date(int year, int month, int day) {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
+
+    public int getyear() {
+        return year;
+    }
+
+    public int getmonth() {
+        return month;
+    }
+
+    public int getday() {
+        return day;
+    }
+
+    public int calcularIdade() {
+        Date Datetoday = obterDatetoday();
+
+        int idade = Datetoday.getyear() - year;
+
+        if (Datetoday.getmonth() < month || (Datetoday.getmonth() == month && Datetoday.getday() < day)) {
+            idade--;
+        }
+
+        return idade;
+    }
+
+    private Date obterDatetoday() {
+        // Aqui você deve implementar a lógica para obter a Date today do sistema
+        // Neste exemplo, estamos usando uma Date fixa para fins ilustrativos
+        return new Date(2023, 7, 12);
+    }
+}
+
+
+    public static class EntradaDeCinema {
+    private String DateFilme;
+    private String horario;
+    private String sala;
+    private double valor;
+
+    public EntradaDeCinema(String DateFilme, String horario, String sala, double valor) {
+        this.DateFilme = DateFilme;
+        this.horario = horario;
+        this.sala = sala;
+        this.valor = valor;
+    }
+
+    public void calculaDesconto(Date DateNascimento) {
+        if (DateNascimento.calcularIdade() < 12) {
+            valor *= 0.5; // Desconto de 50% para menores de 12 years
+        }
+    }
+
+    public void calculaDesconto(Date DateNascimento, int carteiraEstudante) {
+        int idade = DateNascimento.calcularIdade();
+        if (idade >= 12 && idade <= 15) {
+            valor *= 0.6; // Desconto de 40% para estudantes de 12 a 15 years
+        } else if (idade >= 16 && idade <= 20) {
+            valor *= 0.7; // Desconto de 30% para estudantes de 16 a 20 years
+        } else if (idade > 20) {
+            valor *= 0.8; // Desconto de 20% para estudantes com mais de 20 years
+        }
+    }
+
+    public void calculaDescontoHorario() {
+        if (horarioAntesDas16()) {
+            valor *= 0.9; // Desconto de 10% para horário antes das 16 horas
+        }
+    }
+
+    private boolean horarioAntesDas16() {
+        int hora = Integer.parseInt(horario.substring(0, 2));
+        return hora < 16;
+    }
+
+    public String toString() {
+        return "Date do Filme: " + DateFilme + "\n" +
+               "Horário: " + horario + "\n" +
+               "Sala: " + sala + "\n" +
+               "Valor: R$" + valor;
+    }
+}
+
+   
+    public static void main(String[] args) {
+        Date DateNascimento = new Date(2005, 6, 15); // Exemplo de Date de nascimento (15 de junho de 2005)
+        int numeroCarteiraEstudante = 12345; // Exemplo de número de carteira de estudante
+
+        EntradaDeCinema entrada = new EntradaDeCinema("2023-07-12", "15:30", "Sala 1", 30.0);
+
+        System.out.println("Valor original:");
+        System.out.println(entrada.toString());
+
+        entrada.calculaDesconto(DateNascimento);
+        System.out.println("\nValor com desconto por idade:");
+        System.out.println(entrada.toString());
+
+        entrada.calculaDesconto(DateNascimento, numeroCarteiraEstudante);
+        System.out.println("\nValor com desconto por idade e carteira de estudante:");
+        System.out.println(entrada.toString());
+
+        entrada.calculaDescontoHorario();
+        System.out.println("\nValor com desconto por horário:");
+        System.out.println(entrada.toString());
+    }
+    
+}

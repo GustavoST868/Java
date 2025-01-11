@@ -1,0 +1,78 @@
+
+package main;
+
+
+public class Main {
+    
+    
+    public static class Date{
+        
+        
+        //atributes
+        int month;
+        int day;
+        int year;
+        
+        
+        //contructor
+        public Date(int month, int day, int year) {
+        this.month = month;
+        this.day = day;
+        this.year = year;
+        }
+        
+        
+        //methodes gets and set
+
+        public int getMonth() {
+        return month;
+        }
+
+        
+        public int getDay() {
+        return day;
+        }
+
+        
+        public int getYear() {
+        return year;
+        }
+
+        
+        public void setMonth(int month) {
+        this.month = month;
+        }
+
+        
+        public void setDay(int day) {
+        this.day = day;
+        }
+
+        
+        public void setYear(int year) {
+        this.year = year;
+        } 
+        
+        public String printDate(){
+        String date = "\n["+day+"/"+month+"/"+year+"]";  
+        return date;
+        }
+
+        
+        public String toString() {
+        return "\nMonth = " + month + "\nDay = " + day + "\nYear=" + year;
+        }   
+    }
+    
+       
+    public static void main(String[] args) {
+     //object
+     Date d = new Date(10,10,2023);
+     
+     
+     //print
+     System.out.println(d.printDate());
+     
+    }
+    
+}

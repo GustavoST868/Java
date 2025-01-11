@@ -1,0 +1,127 @@
+
+package main;
+  //libraries
+  import javax.swing.JOptionPane;
+
+public class Main {
+    
+ 
+    //Date class
+    public static class Date{
+        
+        
+            //private attributes
+            public int month;
+            public int day;
+            public int year;
+    
+    
+             //constructor
+            public  Date(int month,int day,int year){
+                this.month = month;
+                this.day   = day;
+                this.year  = year;
+            }
+            
+            
+            //return month
+            public int getMonth(){
+                return month;
+            }
+            
+            
+            //function to set the month
+            public void setMonth(int month){
+                this.month = month;
+            }
+            
+            
+            //returt day
+            public int getDay(){
+                return day;
+            }
+            
+            
+            
+            //function to set the day
+            public void setDay(int day){
+                this.day = day;
+            }
+            
+            
+            //retun year
+            public int getYear(){
+                return year;
+            }
+            
+            
+            //function to set the year
+            public void setYear(int year){
+                this.year = year;
+            }
+            
+            
+            //function to print the Date
+            public void printDate(){
+                JOptionPane.showMessageDialog(null,"["+day+"/"+month+"/"+year+"]");
+            }
+    }
+ 
+    
+    
+    //class to test  functions
+    public static class dateTest{
+        
+        //method to test
+        void Test(){
+            
+            
+        //declare object and assign values
+        Date date = new Date(6,10,2003);
+        
+        
+        //use get methods to test 
+        JOptionPane.showMessageDialog(null,"Month: " + date.getMonth());
+        JOptionPane.showMessageDialog(null,"Day: "   + date.getDay());
+        JOptionPane.showMessageDialog(null,"Year: "  + date.getYear());
+        
+        
+        //use the method to showing the date
+        date.printDate();
+        
+        
+        //use method to set values
+        date.setMonth(11);
+        date.setDay(10);
+        date.setYear(2001);
+        
+        
+        //use get methods to test 
+        JOptionPane.showMessageDialog(null,"Month: " + date.getMonth());
+        JOptionPane.showMessageDialog(null,"Day: "   + date.getDay());
+        JOptionPane.showMessageDialog(null,"Year: "  + date.getYear());
+        
+        
+        //use the method to showing the date again
+        date.printDate();
+        
+        
+        }
+         
+        
+    }
+    
+    
+    public static void main(String[] args) {
+        
+        //declare the object for the test class
+         dateTest dt = new dateTest();
+         
+         
+         //call the method
+         dt.Test();
+         
+        }
+}
+
+    

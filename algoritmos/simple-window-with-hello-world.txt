@@ -1,0 +1,64 @@
+package main;
+
+
+//Importar as bibliotecas necessárias:
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class Main{
+    
+    public static void main(String[] args){
+        
+        
+        //Criar uma nova janela JFrame:
+        JFrame new_janela = new JFrame("Olá mundo");
+        
+        
+        //Criar um botão com o texto clique aqui:
+        JButton new_button = new JButton("Clique aqui");
+        
+        
+        //Criar um novo label vazio::
+        JLabel new_label = new JLabel();
+        
+        
+        //Adicionar o novo botão e label a janela:
+        new_janela.add(new_label);
+        new_janela.add(new_button);
+        
+        
+        //Adicionar uma ação para imprimir Olá Mundo::
+        new_button.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                new_label.setText("Olá Mundo");
+            }
+        });
+        
+        
+        //Posicionar manualmente os componentes:
+        new_janela.setLayout(null);
+        
+        
+        //Posição e tamanho do botão e do label:
+        new_label.setBounds(100,50,100,20);
+        new_button.setBounds(100,80,100,20);
+        
+        
+        //Definir o tamanho da nova janela:
+       new_janela.setSize(300,200);
+       
+       
+       //Definir a ação para fechar a janela:
+       new_janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       
+       
+       //Exibir a janela:
+       new_janela.setVisible(true);
+        
+        
+    }       
+}

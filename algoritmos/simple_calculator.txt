@@ -1,0 +1,86 @@
+import javax.swing.JOptionPane;
+
+public class Main {
+    
+    double option_;
+    double num_one;
+    double num_two;
+    
+
+    public static class CustomDate {
+     
+        double get_options() {
+            //features option:
+            String input = JOptionPane.showInputDialog("1 - SOMA\n2 - MULTIPLICAÇÃO\n3 - DIVISÃO\nDigite a função que deseja: ");
+            double option_ = Double.parseDouble(input);
+            return option_;
+        }
+        
+        
+        //first number option:
+        double getNum_one(){
+            String input = JOptionPane.showInputDialog("Informe o primeiro numero : ");
+            double num_one = Double.parseDouble(input);
+            return num_one;
+        }
+        
+        
+        //second number option:
+        double getNum_two(){
+            String input = JOptionPane.showInputDialog("Informe o segundo numero : ");
+            double num_two = Double.parseDouble(input);
+            return num_two;
+        }
+            
+        
+        double Soma(double num_one, double num_two) {
+            double soma = num_one + num_two;
+            return soma;
+        }
+        
+        
+        double Multiplicacao(double num_one, double num_two) {
+            double multiplicacao = num_one * num_two;
+            return multiplicacao;
+        }
+        
+        double Divisao(double num_one, double num_two) {
+            double divisao = num_one / num_two;
+            return divisao;
+        }
+        
+    }
+      
+    public static void main(String[] args) {
+  
+        
+        //declaring an object for the calculator class:
+       CustomDate date = new CustomDate();
+       double option_ = date.get_options();
+       
+       
+       //sum option:
+       if (option_ == 1) {
+           double num_one = date.getNum_one();
+           double num_two = date.getNum_two();
+           double result = date.Soma(num_one, num_two);
+           JOptionPane.showMessageDialog(null, "Resultado da soma: " + result);
+       }
+       
+       //multiplication option:
+       else if (option_ == 2) {
+           double num_one = date.getNum_one();
+           double num_two = date.getNum_two();
+           double result = date.Multiplicacao(num_one, num_two);
+           JOptionPane.showMessageDialog(null, "Resultado da soma: " + result);
+       }
+       
+       //division option:
+       else if (option_ == 3) {
+           double num_one = date.getNum_one();
+           double num_two = date.getNum_two();
+           double result = date.Divisao(num_one, num_two);
+           JOptionPane.showMessageDialog(null, "Resultado da soma: " + result);
+       }
+    }
+}

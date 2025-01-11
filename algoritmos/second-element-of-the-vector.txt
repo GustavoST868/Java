@@ -1,0 +1,42 @@
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        //define a name for the scan object:
+        Scanner scanner = new Scanner(System.in);
+        
+        //get vector size:
+        System.out.println("Digite um valor : ");
+        int num = scanner.nextInt();
+        
+        
+        //create a vector:
+        int[] vector = new int [num];
+        
+        
+        //get the vector elements:
+        System.out.println("Digite os elementos do vetor: ");
+        for(int i = 0; i < num; i++){
+            vector[i] = scanner.nextInt();
+        }
+         
+        
+        //organize the vector:
+        Arrays.sort(vector);
+        
+        
+        //second vector element:
+        int secondMinor = vector[1];
+       
+        
+        //show the second element of the vector:
+        System.out.println("O segundo maior valor é " + secondMinor);
+        }
+    }
+    
+

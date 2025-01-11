@@ -1,0 +1,84 @@
+package main;
+
+//libraries
+import javax.swing.JOptionPane;
+
+
+public class Main{ //right triangle question
+
+    
+      //triangle (abstraction)
+      public static class Triangle{
+      //features
+        double side_one;
+        double side_two;
+        double hypotenuse;
+        double area;
+      
+      
+      public Triangle(double side_one, double side_two){
+        this.side_one  = side_one;
+        this.side_two = side_two;
+      }
+      
+      
+      //print base
+      public void getBase(){
+          this.side_one = side_one;
+          JOptionPane.showMessageDialog(null, String.format("Base = [ %.2f ]",side_one));
+      }
+      
+      
+      //print altura
+      public void getHeight(){
+          this.side_two = side_two;
+          JOptionPane.showMessageDialog(null, String.format("Height = [ %.2f ]",side_two));
+      }
+      
+      
+      //function calculates area triangle 
+      void getArea(){
+        double  area = (side_one*side_two)/2;
+        JOptionPane.showMessageDialog(null, String.format("Area = [ %.2f ]",area));
+      }
+      
+      
+      void getHypotenuse(){
+          double hypotenuse = Math.sqrt( Math.pow(side_one,2) + Math.pow(side_two,2) );
+          JOptionPane.showMessageDialog(null, String.format("Hypotenuse = [ %.2f ]",hypotenuse));
+      }
+      
+       
+      public String toString(){
+          return("Base = "+ side_one +"\n" +"Height = "+ side_two +"\n" +"Area = (Triangle X Base)/2 = "+ area +"\n"+"Hypotenuse = " + hypotenuse);
+      }
+      
+   }
+   
+   
+    public static void main(String[] args){
+     
+        
+        //declare object
+        Triangle tr = new Triangle(5,3);
+        
+        
+        //print base
+        tr.getBase();
+        
+        
+        //print height
+        tr.getHeight();
+        
+        
+        
+        //function that calculates the area triangle
+        tr.getArea();
+        
+        
+        //function that calculates the hypotenuse triangle
+        tr.getHypotenuse();
+        
+    }
+}
+

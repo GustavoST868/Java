@@ -1,0 +1,105 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class main {
+
+    
+  
+public static class Country {
+    private String name;
+    private String capital;
+    private int dimensao;
+    private List<Country> fronteiras;
+
+    public Country(String name, String capital, int dimensao) {
+        this.name = name;
+        this.capital = capital;
+        this.dimensao = dimensao;
+        this.fronteiras = new ArrayList<>();
+    }
+
+    public String getname() {
+        return name;
+    }
+
+    public String getCapital() {
+        return capital;
+    }
+
+    public int getDimensao() {
+        return dimensao;
+    }
+
+    public boolean equals(final Country outro) {
+        return this.name.equals(outro.getname()) && this.capital.equals(outro.getCapital());
+    }
+
+    public void adicionarFronteira(Country Country) {
+        if (!this.equals(Country) && !fronteiras.contains(Country)) {
+            fronteiras.add(Country);
+        }
+    }
+
+    public List<Country> getFronteiras() {
+        return fronteiras;
+    }
+
+    public List<Country> neighborsComuns(Country outroCountry) {
+        List<Country> neighborsComuns = new ArrayList<>();
+        for (Country Country : fronteiras) {
+            if (outroCountry.getFronteiras().contains(Country)) {
+                neighborsComuns.add(Country);
+            }
+        }
+        return neighborsComuns;
+    }
+}
+
+    
+     public static void main(String[] args) {
+         
+        // Criando alguns países
+        Country brasil = new Country("Brasil", "Brasília", 8515767);
+        Country argentina = new Country("Argentina", "Buenos Aires", 2780400);
+        Country uruguai = new Country("Uruguai", "Montevidéu", 176215);
+        Country paraguai = new Country("Paraguai", "Assunção", 406752);
+        Country bolivia = new Country("Bolívia", "La Paz", 1098581);
+
+        // Adicionando fronteiras entre países
+        brasil.adicionarFronteira(argentina);
+        brasil.adicionarFronteira(uruguai);
+        brasil.adicionarFronteira(paraguai);
+        brasil.adicionarFronteira(bolivia);
+
+        argentina.adicionarFronteira(uruguai);
+        argentina.adicionarFronteira(paraguai);
+
+        uruguai.adicionarFronteira(argentina);
+
+        paraguai.adicionarFronteira(argentina);
+        paraguai.adicionarFronteira(brasil);
+        paraguai.adicionarFronteira(bolivia);
+
+        bolivia.adicionarFronteira(brasil);
+        bolivia.adicionarFronteira(paraguai);
+
+        // Verificando se dois países são iguais
+        System.out.println("Brasil é igual a Argentina? " + brasil.equals(argentina));
+        System.out.println("Uruguai é igual a Uruguai? " + uruguai.equals(uruguai));
+
+        // Obtendo fronteiras de um país
+        List<Country> fronteirasBrasil = brasil.getFronteiras();
+        System.out.println("Fronteiras do Brasil:");
+        for (Country Country : fronteirasBrasil) {
+            System.out.println("- " + Country.getname());
+        }
+
+        // Obtendo neighbors comuns entre dois países
+        List<Country> neighborsComuns = brasil.neighborsComuns(paraguai);
+        System.out.println("neighbors comuns entre Brasil e Paraguai:");
+        for (Country Country : neighborsComuns) {
+            System.out.println("- " + Country.getname());
+        }
+    }
+    
+}

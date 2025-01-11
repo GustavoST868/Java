@@ -1,0 +1,273 @@
+
+package main;
+
+
+public class Main {
+    
+    public static class Vehicle{
+        
+    
+    //atributes
+    String color;
+    double potency;
+    int year;
+    double value;
+    
+    
+    //constructor
+    public Vehicle(String color, double potency, int year, double value) {
+    this.color = color;
+    this.potency = potency;
+    this.year = year;
+    this.value = value;
+    }
+    
+    //methods gets and sets
+
+        public String getColor() {
+        return color;
+        }
+
+        public double getPotency() {
+        return potency;
+        }
+
+        public int getYear() {
+        return year;
+        }
+
+        public double getValue() {
+        return value;
+        }
+
+        public void setColor(String color) {
+        this.color = color;
+        }
+
+        public void setPotency(double potency) {
+        this.potency = potency;
+        }
+
+        public void setYear(int year) {
+        this.year = year;
+        }
+
+        public void setValue(double value) {
+        this.value = value;
+        }
+
+        
+        public String toString() {
+        return  "\nColor = " + color + "\nPotency = " + potency + "znYear = " + year + "\nValue=" + value;
+        } 
+    }
+    
+    
+    public static class Motorcycle extends Vehicle{
+        
+        
+     //atributes test
+     String testmotorcycle; 
+
+     
+     //constructor
+     public Motorcycle(String testmotorcycle, String color, double potency, int year, double value) {
+     super(color, potency, year, value);
+     this.testmotorcycle = testmotorcycle;
+     }
+     
+     //methodes gets sets
+
+        public String getTestmotorcycle() {
+        return testmotorcycle;
+        }
+
+        public String getColor() {
+        return color;
+        }
+
+        public double getPotency() {
+        return potency;
+        }
+
+        public int getYear() {
+        return year;
+        }
+
+        public double getValue() {
+        return value;
+        }
+
+        public void setTestmotorcycle(String testmotorcycle) {
+        this.testmotorcycle = testmotorcycle;
+        }
+
+        public void setColor(String color) {
+        this.color = color;
+        }
+
+        public void setPotency(double potency) {
+        this.potency = potency;
+        }
+
+        public void setYear(int year) {
+        this.year = year;
+        }
+
+        public void setValue(double value) {
+        this.value = value;
+        }
+
+        public String toString() {
+        return "\nTestmotorcycle = " + testmotorcycle;
+        }
+         
+    }
+    
+    
+    public static class Car extends Vehicle{
+        
+        
+    //atributes test
+    String testcar; 
+    
+    
+    //constructor
+    public Car(String testcar, String color, double potency, int year, double value) {
+    super(color, potency, year, value);
+    this.testcar = testcar;
+        }
+    
+    
+    //methodes gets sets
+
+        public String getTestcar() {
+        return testcar;
+        }
+
+        public String getColor() {
+        return color;
+        }
+
+        public double getPotency() {
+        return potency;
+        }
+
+        public int getYear() {
+        return year;
+        }
+
+        public double getValue() {
+        return value;
+        }
+
+        public void setTestcar(String testcar) {
+        this.testcar = testcar;
+        }
+
+        public void setColor(String color) {
+        this.color = color;
+        }
+
+        public void setPotency(double potency) {
+        this.potency = potency;
+        }
+
+        public void setYear(int year) {
+        this.year = year;
+        }
+
+        public void setValue(double value) {
+        this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "\nTestcar = " + testcar;
+        }
+
+    }
+    
+    
+    public static class Truck extends Vehicle{
+        
+        
+    //atributes test
+    String testtruck ; 
+    
+    
+    //constructor
+    public Truck(String testtruck, String color, double potency, int year, double value) {
+    super(color, potency, year, value);
+    this.testtruck = testtruck;
+    }
+    
+    
+    //methodes gets sets
+
+        public String getTesttruck() {
+        return testtruck;
+        }
+
+        public String getColor() {
+        return color;
+        }
+
+        public double getPotency() {
+        return potency;
+        }
+
+        public int getYear() {
+        return year;
+        }
+
+        public double getValue() {
+        return value;
+        }
+
+        public void setTesttruck(String testtruck) {
+        this.testtruck = testtruck;
+        }
+
+        public void setColor(String color) {
+        this.color = color;
+        }
+
+        public void setPotency(double potency) {
+        this.potency = potency;
+        }
+
+        public void setYear(int year) {
+        this.year = year;
+        }
+
+        public void setValue(double value) {
+        this.value = value;
+        }
+
+        
+        public String toString() {
+        return "Testtruck = " + testtruck;
+        }
+    }
+    
+    
+    public static void main(String[] args) {
+        
+        
+     //objects
+     Vehicle    v    = new Vehicle("sdfadsfdf",2000,2000,1000);
+     Car        c    = new Car("sdfsdfsdf","sdfadsfdf",2000,2000,1000);
+     Truck      t    = new Truck("sdfsdfsdf","sdfadsfdf",2000,2000,1000);
+     Motorcycle m    = new Motorcycle("sdfsdfsdf","sdfadsfdf",2000,2000,1000);
+     
+     
+     //print
+     System.out.println(v.toString());
+     System.out.println(c.toString());
+     System.out.println(t.toString());
+     System.out.println(m.toString());
+     
+    }
+    
+}

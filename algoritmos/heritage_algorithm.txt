@@ -1,0 +1,82 @@
+package main;
+
+
+//librares
+import javax.swing.JOptionPane;
+
+
+public class Main {
+    
+    //square class
+    public static class Square {
+        //square variables
+        private double left_side;
+        private double right_side;
+        private double top_side;
+        private double botton_side;
+        
+        //Square class contructor
+        public Square(double left_side, double right_side, double top_side, double botton_side) {
+            this.left_side = left_side;   
+            this.right_side = right_side;
+            this.top_side = top_side;
+            this.botton_side = botton_side;
+        }
+        
+        //gets methodes
+        public double getLeft_side() {
+            return left_side;
+        }
+        
+        public double getRight_side() {
+            return right_side;
+        }
+             
+        public double getTop_side() {
+            return top_side;
+        }
+              
+        public double getBotton_side() {
+            return botton_side;
+        }
+              
+        //sets methods
+        public void setLeft_side(double left_side) {
+            this.left_side = left_side;
+        }
+        
+        public void setRight_side(double right_side) {
+            this.right_side = right_side;
+        }
+        
+        public void setTop_side(double top_side) {
+            this.top_side = top_side;
+        }
+        
+        public void setBotton_side(double botton_side) {
+            this.botton_side = botton_side;
+        }  
+    }
+    
+    //Cube class
+    public static class Cube extends Square {
+        //cube variables
+        private double height;
+        
+        //cube constructor
+        public Cube(double left_side, double height) {
+            super(left_side, left_side, left_side, left_side);
+            this.height = height;
+        }
+        
+        public double getHeight() {
+            return height;
+        }
+    }
+    
+    public static void main(String[] args) {
+        //declaring class objects 
+        Square s = new Square(1, 1, 1, 1);
+        Cube c = new Cube(1, 1);
+    }  
+}

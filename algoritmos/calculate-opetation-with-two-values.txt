@@ -1,0 +1,123 @@
+
+package main;
+
+
+public class Main {
+
+   
+    //calculator class
+    public static class Calculator{
+    
+        
+    //atributes
+    double num1;
+    double num2;
+    
+    
+    //constructor
+    public Calculator(double num1,double num2){
+    this.num1 = num1;
+    this.num2 = num2;
+    }
+    
+    //gets and sets
+    double getNum1(){
+    return num1;
+    }
+    
+    
+    double getNum2(){
+    return num2;
+    }
+    
+    
+    void setNum1(double num1){
+    this.num1 = num1;    
+    }
+
+    
+    public void setNum2(double num2) {
+    this.num2 = num2;
+    }
+    
+    
+    //calculator functions
+    double Sum(){
+    double sum = num1+num2;
+    return sum;  
+    }
+    
+    
+    double Subtraction(){
+    double sub = num1-num2;
+    return sub;  
+    }
+    
+    
+    double Multiplication(){
+    double multiplication = num1*num2;
+    return multiplication;  
+    }
+    
+    
+    double Dividion(){
+    double division = num1+num2;
+    return division;  
+    }
+
+    @Override
+    public String toString() {
+    return "Calculator\n" + "num1=" + num1 + ", num2=" + num2;
+    }    
+    }
+    
+    
+    //class complete calculator
+    public static class Calculator_complete extends Calculator{
+
+    public Calculator_complete(double num1, double num2) {
+    super(num1, num2);
+    }
+    
+    double Sqrt_1(){
+    double sqrt1  = Math.sqrt(num1);
+    return sqrt1;
+    }
+    
+    
+    double Sqrt_2(){
+    double sqrt2  = Math.sqrt(num2);
+    return sqrt2;
+    }
+    
+    double Pow_1(){
+    double pow1 = Math.pow(2, num1);
+    return pow1;
+    }
+    
+    
+    double Pow_2(){
+    double pow2 = Math.pow(2, num2);
+    return pow2;
+    }
+    
+    
+    public String toString(){
+    return "\nSqrt1 = "+Sqrt_1()+"\nSqrt2 = "+Sqrt_2()+"\nPow num1 = "+Pow_1()+"\nPow num2 = "+Pow_2();    
+    }
+    
+}
+    
+    
+    public static void main(String[] args) {
+        
+     Calculator c = new Calculator(1,2);
+     Calculator_complete c_ = new Calculator_complete(1,2);
+      
+     System.out.println(c.toString());
+     System.out.println(c_.toString());
+      
+     
+    }
+    
+}

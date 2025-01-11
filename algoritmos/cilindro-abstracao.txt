@@ -1,0 +1,95 @@
+//libraries
+import javax.swing.JOptionPane;
+
+
+public class Main {
+    
+    
+    //cylinder class
+    public static class Cylinder{
+        
+        
+        //attributes
+        private double ray;
+        private double height;
+        private Cylinder cy_new;
+
+        
+        //constructor
+        public Cylinder(double ray,double pi,double height){
+        this.ray    = ray;
+        this.height = height;
+        }
+        
+        
+        //costructor of compound
+        public Cylinder(Cylinder cy_new){
+        this.height      = cy_new.getHeight();
+        this.ray         = cy_new.getRay();
+        Cylinder cy_new1 = new Cylinder(1,Math.PI,1);
+        }
+        
+        
+        //get methods
+        public double getRay(){
+        return ray;
+        }
+        
+        
+        public double getHeight(){
+        return height;
+        }
+        
+        
+        //setmethods
+        public void setRay(double ray){
+        this.ray = ray;
+        }
+        
+  
+        public void setHeight(double height){
+        this.height = height;
+        }
+        
+        //volume method 
+        public double Volume(){
+        double volume = Math.PI*(Math.pow(ray,2))*height;
+        return volume;
+        }
+        
+        
+        //area method
+        public double Area(){
+        double area = 2*Math.PI*ray*(height+ray);
+        return area;
+        }
+        
+        //print all method
+        public void  printAll(){
+        double area   = Area();
+        double volume = Volume();
+        JOptionPane.showMessageDialog(null, String.format("Cylinder Area :      [%.2f]\nVolume :                 [%.2f]",area,volume));    
+        }
+}
+    
+ 
+    public static void main(String[] args) {
+        
+        
+        //get values to object 
+        double    date_one = Double.parseDouble(JOptionPane.showInputDialog("Ray : "));
+        double    date_two = Double.parseDouble(JOptionPane.showInputDialog("Height : "));
+        
+        
+        //assign the valures obtained in the window
+        Cylinder  c        = new Cylinder(date_one,Math.PI,date_two);
+        
+        
+        //calling the area method
+        c.printAll();
+        
+       
+        
+    }
+    
+}

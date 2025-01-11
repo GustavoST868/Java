@@ -1,0 +1,98 @@
+
+package main;
+
+
+public class Main {
+    
+    public static class Address_Book{
+        
+        
+    //atributes
+    String name; 
+    String phone; 
+    String email; 
+    String birthday;
+    String address;
+    
+    
+    //constructor
+    public Address_Book(String name, String phone, String email, String birthday, String address) {
+    this.name = name;
+    this.phone = phone;
+    this.email = email;
+    this.birthday = birthday;
+    this.address = address;
+    }
+    
+    
+        //methodes gets and  sets
+        public String getName() {
+        return name;
+        }
+
+        public String getPhone() {
+        return phone;
+        }
+
+        public String getEmail() {
+        return email;
+        }
+
+        public String getBirthday() {
+        return birthday;
+        }
+
+        public String getAddress() {
+        return address;
+        }
+
+        public void setName(String name) {
+        this.name = name;
+        }
+
+        public void setPhone(String phone) {
+        this.phone = phone;
+        }
+
+        public void setEmail(String email) {
+        this.email = email;
+        }
+
+        public void setBirthday(String birthday) {
+        this.birthday = birthday;
+        }
+
+        public void setAddress(String address) {
+        this.address = address;
+        }
+    }
+    
+    
+    public static class Other_class extends Address_Book{
+
+        
+     
+     //constructor
+     public Other_class(String name, String phone, String email, String birthday, String address) {
+     super(name, phone, email, birthday, address);
+     } 
+     
+     
+     
+     public String toString() {
+     return "\nName = " + super.getName()+ "\nPhone = " + super.getPhone() + "\nEmail = " + super.getEmail() + "\nBirthday=" + super.getBirthday() + "\nAddress = " + super.getAddress()+"\n\n\n";
+     }
+     
+    }
+   
+    public static void main(String[] args) {
+     
+     //object
+     Address_Book ab = new Address_Book("fgsdfg","dsfsadfsad","sadfsadf","sdfsadfaf","asdfsadfsaf");
+     Other_class t = new Other_class("fgsdfg","dsfsadfsad","sadfsadf","sdfsadfaf","asdfsadfsaf");
+     
+     //print
+     System.out.println(t.toString());
+    }
+    
+}

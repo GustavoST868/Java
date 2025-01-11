@@ -1,0 +1,90 @@
+libraries
+import javax.swing.JOptionPane;
+
+
+public class Main {
+
+    
+    class people
+    public static class Date_people{
+        
+        atributes
+        private static int code_st;is from the class
+        private int code;
+        private String name;
+        private String cpf;
+        private String email;
+        
+        
+        constructor
+        public Date_people(String name,String cpf,String email){
+        this.code = ++code_st;
+        this.name  = name;
+        this.cpf   = cpf;
+        this.email = email;
+        }
+
+        
+        methods gets
+        public String getName(){
+        return name;
+        }
+        
+        
+        public String getCPF(){
+        return cpf;
+        }
+        
+        
+        public String getEmail(){
+        return email;    
+        }
+            
+            
+        methods set
+        public void setName(String name){
+        this.name = name;
+        }
+        
+        
+        public void setCPF(String cpf){
+        this.cpf = cpf;
+        }
+        
+        
+        public void setEmail(String email){
+        this.email = email;
+        }
+        
+        
+        method ToString
+        public String ToString(){
+        return People_Data +code+nName  +name+n+Cpf  +cpf+n+Email  +email+n;   
+        }
+    } 
+  
+   
+    public static void main(String[] args) {
+       
+        
+        people one
+        String name  =  JOptionPane.showInputDialog(null,Name );
+        String cpf   =  JOptionPane.showInputDialog(null,CPF );
+        String email =  JOptionPane.showInputDialog(null,Email );
+        Date_people c1 = new Date_people(name,cpf,email);
+        
+        
+        people two
+        String name2  =  JOptionPane.showInputDialog(null,Name );
+        String cpf2   =  JOptionPane.showInputDialog(null,CPF );
+        String email2 =  JOptionPane.showInputDialog(null,Email );
+        Date_people c2 = new Date_people(name2,cpf2,email2);   
+            
+        
+        print all data
+        JOptionPane.showMessageDialog(null,+c1.ToString()+nn+c2.ToString());
+        
+        
+    }
+    
+}
